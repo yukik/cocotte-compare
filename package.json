@@ -1,7 +1,7 @@
 {
   "name": "cocotte-compare",
   "description": "人間らしい比較関数",
-  "homepage": "https://github.com/yukik/cocotte-comapre",
+  "homepage": "https://github.com/yukik/cocotte-compare",
   "keywords": [
     "tools",
     "cocotte"
@@ -12,13 +12,17 @@
     "url": "git://github.com/yukik/cocotte-compare.git"
   },
   "main": "compare.js",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "scripts": {
     "test": "node ./test/test.js"
   },
   "directories": {
     "test": "test"
   },
+  "devDependencies": [
+    "cocotte-define",
+    "underscore"
+  ],
   "readmeFilename": "README.md",
   "license": "MIT"
 }

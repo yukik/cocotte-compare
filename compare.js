@@ -1,4 +1,5 @@
-/*jshint eqeqeq:false*/
+/*jshint forin:false */
+
 'use strict';
 
 var getType = function getType (target) {
@@ -44,6 +45,7 @@ var eq = function eq (target1, target2) {
 
   // プリミティブ、値が一致
   // オブジェクト、参照が一致
+  // 0は-0のチェックのため除外
   if (target1 === target2 && target1 !== 0) {
     return true;
   }
@@ -65,10 +67,13 @@ var eq = function eq (target1, target2) {
   case tp1 === Number:
     target1 = target1.valueOf();
     target2 = target2.valueOf();
+    if (isNaN(target1) && isNaN(target2)) {
+      return true;
+    }
     if (target1 === 0 && target2 === 0) {
       return 1 / target1 === 1 / target2; // 0と-0
     }
-    return target1 === target2 || isNaN(target1) && isNaN(target2);
+    return target1 === target2;
 
   case tp1 === RegExp:
     return target1.toString() === target2.toString();
@@ -79,8 +84,14 @@ var eq = function eq (target1, target2) {
     return t1 === t2 || isNaN(t1) && isNaN(t2);
 
   case tp1 === Function:
-    // 関数は参照が同じ以外は不一致とする
-    return false;
+    // 厳密の場合は参照が一致のみ
+    if (self.strict) {
+      return false;
+    }
+    if (target1.name !== target2.name) {
+      return false;
+    }
+    return target1.toString() === target2.toString();
 
   case target1 instanceof Error:
     return target1.message === target2.message;
@@ -115,11 +126,12 @@ var eq = function eq (target1, target2) {
   }
 };
 
-var compare = function (target1, target2) {
+var compare = function (target1, target2, strict) {
   var self = {
     eq: eq
+  , strict: !!strict // 関数は参照先が一致とする
   , nest: -1 // eqからさらにeqが呼ばれた回数
-  , obj1: []
+  , obj1: [] // 自己参照対策
   , obj2: []
   };
 
