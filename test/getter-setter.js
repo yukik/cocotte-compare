@@ -24,6 +24,6 @@ Object.defineProperty (target2, 'prop1', {
   }
 });
 
-var x = compare(target1, target2);
+assert(compare(target1, target2));
 
-assert(x);
+console.log('test ok');
