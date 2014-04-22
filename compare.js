@@ -106,6 +106,14 @@ var eq = function eq (target1, target2) {
     self.obj1.push(target1);
     self.obj2.push(target2);
 
+    // cocotte-defineで定義されたインスタンスは値一覧に変更
+    if (target1.cocotteDefine_) {
+      target1 = target1.value;
+    }
+    if (target2.cocotteDefine_) {
+      target2 = target2.value;
+    }
+
     var keys1 = []
       , keys2 = [];
 
@@ -136,7 +144,7 @@ var compare = function (target1, target2, strict) {
   };
 
   var result = self.eq(target1, target2);
-  // console.log(self); // nest確認
+  // console.log(self.nest); // nest確認
   return result;
 };
 
