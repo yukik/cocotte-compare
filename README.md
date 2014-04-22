@@ -107,11 +107,3 @@ console.log(compare(a, b, true)); // false
 console.log(compare(a, c, true)); // false
 console.log(compare(a, d, true)); // false
 ```
-
-
-
-
-
-
-
-
