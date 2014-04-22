@@ -11,13 +11,17 @@ var target2 = {};
 Object.defineProperty (target1, 'prop1', {
   enumerable: true,
   set: function (val) {this.v = val;},
-  get: function () {return this.v;}
+  get: function () {
+    return this.v;
+  }
 });
 
 Object.defineProperty (target2, 'prop1', {
   enumerable: true,
   set: function (val) {this.v = val;},
-  get: function () {return this.v;}
+  get: function () {
+    return void 0;
+  }
 });
 
 var x = compare(target1, target2);
