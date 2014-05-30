@@ -1,5 +1,9 @@
 /*jshint forin:false */
-
+/*
+ * Copyright(c) 2014 Yuki Kurata <yuki.kurata@gmail.com>
+ * MIT Licensed
+ */
+/*grunt-m2r*/
 'use strict';
 
 var getType = function getType (target) {
@@ -149,5 +153,3 @@ var compare = function (target1, target2, strict) {
 };
 
 module.exports = exports = compare;
-
-

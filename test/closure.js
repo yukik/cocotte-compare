@@ -55,4 +55,5 @@ assert(!_.isEqual(a, b));
 assert(!_.isEqual(a, c));
 assert(!_.isEqual(a, d));
 
+console.log('test ok');
 
