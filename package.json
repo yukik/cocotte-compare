@@ -11,19 +11,23 @@
     "type": "git",
     "url": "git://github.com/yukik/cocotte-compare.git"
   },
-  "main": "compare.js",
-  "version": "0.2.0",
+  "main": "cocotte-compare.js",
+  "version": "0.2.1",
   "scripts": {
     "test": "node ./test/test.js"
   },
-  
   "directories": {
     "test": "test"
   },
-  "devDependencies": [
-    "cocotte-define",
-    "underscore"
-  ],
+  "dependencies":{
+  },
+  "devDependencies": {
+    "grunt": "~0.4.5",
+    "grunt-contrib-watch": "~0.4.0",
+    "grunt-m2r": "~0.1.1",
+    "cocotte-define": "*",
+    "underscore": "*"
+  },
   "readmeFilename": "README.md",
   "license": "MIT"
 }
