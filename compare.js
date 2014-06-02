@@ -6,8 +6,6 @@
 /*grunt-m2r*/
 'use strict';
 
-var m1 = require('m1');
-
 var getType = function getType (target) {
 
   // undefined, null
