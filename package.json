@@ -13,7 +13,7 @@
     "url": "git://github.com/yukik/cocotte-compare.git"
   },
   "main": "compare.js",
-  "version": "0.3.1",
+  "version": "0.4.0",
   "scripts": {
     "test": "node ./test/test.js"
   },
@@ -22,10 +22,7 @@
   },
   "dependencies":{
   },
-  "devDependencies": {
-    "cocotte-define": "*",
-    "underscore": "*"
-  },
+  "devDependencies": {},
   "readmeFilename": "README.md",
   "license": "MIT"
 }
