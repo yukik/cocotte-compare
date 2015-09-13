@@ -9,8 +9,4 @@ var fn3 = function fn1 () {};
 
 assert( compare(fn1, fn1));
 assert(!compare(fn1, fn2));
-assert(!compare(fn1, fn2, true));
 assert( compare(fn1, fn3));
-assert(!compare(fn1, fn3, true));
-
-
