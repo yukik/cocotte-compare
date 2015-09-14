@@ -6,6 +6,8 @@ require('./date');
 require('./regexp');
 require('./error');
 require('./function');
+require('./level-array');
+require('./level-object');
 require('./array');
 require('./array-loop');
 require('./object-simple');

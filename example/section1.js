@@ -20,3 +20,5 @@ target1.e = target2;
 target2.e = target1;
 
 console.log(compare(target1, target2)); // true
+
+
