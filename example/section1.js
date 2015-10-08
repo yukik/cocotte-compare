@@ -1,4 +1,6 @@
-var compare = require('..');
+/*global Cocotte*/
+var isClient = typeof window === 'object';
+var compare = isClient ? Cocotte.compare : require('..');
 
 var target1 = {
   a: 1,
